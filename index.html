@@ -7,13 +7,17 @@
     <title>Summer Sale</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+      </style>
+      
 </head>
 
-<body>
+<body style="font-family: 'Work Sans', sans-serif;">
     <header>
         <!-- banner -->
         <div class="hero min-h-screen bg-[#F9F6E2]">
-            <div class="hero-content flex-col lg:flex-row-reverse gap-24">
+            <div class="hero-content flex-col lg:flex-row-reverse gap-60 ">
                 <img src="./images/Summer 1.png" class="max-w-sm rounded-lg shadow-2xl" />
                 <div class="text-center">
                     <h3 class="font-semibold mb-4">---SALE FEVER---</h3>
@@ -29,14 +33,14 @@
         </div>
     </header>
     <main class="bg-gray-100">
-        <section class="py-24 px-4">
+        <section class="py-24 px-4 md:container mx-auto">
             <div class="flex flex-col lg:flex-row justify-between">
                 <div>
                     <h3 class="font-bold text-3xl mb-8">Kitchenware</h3>
                     <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                         <!-- first card -->
-                        <div class="card bg-base-100">
+                        <div onclick="addItemToCart1()" class="card bg-base-100">
                             <figure class="m-4 p-10 bg-gray-200">
                                 <img src="./images/prod1.png" alt="" class="rounded-xl" />
                             </figure>
@@ -65,11 +69,11 @@
                                         class="bg-orange-500 mask mask-star-2 mask-half-2" />
                                 </div>
                                 <h2 class="card-title font-semibold">K. Accessories</h2>
-                                <p>39.00 TK</p>
+                                <p><span id="price1">39.00</span> TK</p>
                             </div>
                         </div>
                         <!-- second card -->
-                        <div class="card bg-base-100">
+                        <div onclick="addItemToCart2()" class="card bg-base-100">
                             <figure class="m-4 p-10 bg-gray-200">
                                 <img src="./images/prod2.png" alt="" class="rounded-xl" />
                             </figure>
@@ -97,12 +101,12 @@
                                     <input type="radio" name="rating-10"
                                         class="bg-orange-500 mask mask-star-2 mask-half-2" />
                                 </div>
-                                <h2 class="card-title font-semibold">K. Accessories</h2>
-                                <p>25.00 TK</p>
+                                <h2 class="card-title font-semibold">H. Accessories</h2>
+                                <p><span id="price2">25.00</span> TK</p>
                             </div>
                         </div>
                         <!-- third card -->
-                        <div class="card bg-base-100">
+                        <div onclick="addItemToCart3()" class="card bg-base-100">
                             <figure class="m-4 p-10 bg-gray-200">
                                 <img src="./images/prod3.png" alt="" class="rounded-xl" />
                             </figure>
@@ -130,8 +134,8 @@
                                     <input type="radio" name="rating-10"
                                         class="bg-orange-500 mask mask-star-2 mask-half-2" />
                                 </div>
-                                <h2 class="card-title font-semibold">K. Accessories</h2>
-                                <p>49.00 TK</p>
+                                <h2 class="card-title font-semibold">Home Cooker</h2>
+                                <p><span id="price3">49.00</span> TK</p>
                             </div>
                         </div>
                     </div>
@@ -146,14 +150,14 @@
                     </div>
 
                     <div class="bg-white pr-10 pl-4 py-10 rounded-xl">
-                        <div class="addToCart">
+                        <div id="entryToCart">
 
                         </div>
                         <hr class="">
                         <div class="my-2">
-                            <p><span class="font-bold text-xl">Total price: </span> <span class="text-xl"> 00.00TK</span></p>
-                            <p><span class="font-bold text-xl">Discount:</span> <span class="text-xl"> 00.00TK</span></p>
-                            <p><span class="font-bold text-xl">Total:</span> <span class="text-xl"> 00.00TK</span></p>
+                            <p><span class="font-bold text-xl">Total price: </span> <span id="total-price"  class="text-xl"> 00.00 <span>TK</span></span></p>
+                            <p><span class="font-bold text-xl">Discount:</span> <span id="discount" class="text-xl"> 00.00 <span>TK</span></span></p>
+                            <p><span class="font-bold text-xl">Total:</span> <span id="total" class="text-xl"> 00.00 <span>TK</span></span></p>
                         </div>
                         <hr class="">
                         
@@ -163,6 +167,7 @@
             </div>
         </section>
     </main>
+    <script src="addToCart.js"></script>
 </body>
 
 </html>
